@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_customerRegisterFragment"
+            app:destination="@id/customerRegisterFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_assistanceFragment"
+            app:destination="@id/assistanceFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_groupActivitiesFragment"
+            app:destination="@id/groupActivitiesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_createActivityFragment"
+            app:destination="@id/createActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assistanceFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.AssistanceFragment"
+        android:label="fragment_assistance"
+        tools:layout="@layout/fragment_assistance" />
+    <fragment
+        android:id="@+id/customerRegisterFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.CustomerRegisterFragment"
+        android:label="fragment_customer_register"
+        tools:layout="@layout/fragment_customer_register" />
+    <fragment
+        android:id="@+id/groupActivitiesFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.GroupActivitiesFragment"
+        android:label="fragment_group_activities"
+        tools:layout="@layout/fragment_group_activities" />
+    <fragment
+        android:id="@+id/createActivityFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.CreateActivityFragment"
+        android:label="fragment_create_activity"
+        tools:layout="@layout/fragment_create_activity" />
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="xherrera.esan.dpa_gym_is_life.fragments.SubscriptionFragment"
+        android:label="fragment_subscription"
+        tools:layout="@layout/fragment_subscription" />
+</navigation>
