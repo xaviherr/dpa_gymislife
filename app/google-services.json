@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "781259954273",
+    "project_id": "esandpaplanetapp",
+    "storage_bucket": "esandpaplanetapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781259954273:android:8f7ed67e304def60a57220",
+        "android_client_info": {
+          "package_name": "esan.dpa.voluntariado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781259954273-qadlo76v95ch9di0cnng9hc34edsic2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPG8uAPMMVPuKx7OUTsS7vPhn1bQner7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781259954273-qadlo76v95ch9di0cnng9hc34edsic2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781259954273:android:f4be99e0371940eaa57220",
+        "android_client_info": {
+          "package_name": "xherrera.esan.dpa_gym_is_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781259954273-qadlo76v95ch9di0cnng9hc34edsic2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPG8uAPMMVPuKx7OUTsS7vPhn1bQner7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781259954273-qadlo76v95ch9di0cnng9hc34edsic2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
