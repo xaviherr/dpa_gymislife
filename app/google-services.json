@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191618863988",
+    "project_id": "registroymembresia",
+    "storage_bucket": "registroymembresia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191618863988:android:a723288a6acd7fee5f5221",
+        "android_client_info": {
+          "package_name": "dev.mvgioser.registroymembresia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191618863988-psrf599sjrm4ovuhg8res1f5aui0ifa2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCijbuPqfmBxhl3c1m6_zqwoDFcIEZHICE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191618863988-psrf599sjrm4ovuhg8res1f5aui0ifa2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
