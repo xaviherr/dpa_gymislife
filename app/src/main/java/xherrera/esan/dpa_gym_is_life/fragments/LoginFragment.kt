@@ -25,6 +25,8 @@ class LoginFragment : Fragment() {
 
     private val model: LoginViewModel by viewModels()
     private lateinit var loginView: View
+    private lateinit var etDNI: EditText
+    private lateinit var etPassword: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,14 +36,12 @@ class LoginFragment : Fragment() {
 
         val loginButton: Button = loginView.findViewById(R.id.btnIngresar)
         val registerButton: Button = loginView.findViewById(R.id.btnRegistrar)
-        val etDNI: EditText = loginView.findViewById(R.id.etDNI)
-        val etClave: TextView = loginView.findViewById(R.id.etClave)
+        etDNI = loginView.findViewById(R.id.etDNI)
+        etPassword = loginView.findViewById(R.id.etClave)
 
-        var dni = etDNI.text.toString()
-        var pass = etClave.text.toString()
 
         loginButton.setOnClickListener {
-            loginButtonListener(dni, pass)
+            loginButtonListener()
         }
 
         registerButton.setOnClickListener {
@@ -73,8 +73,12 @@ class LoginFragment : Fragment() {
                 .actionLoginFragmentToCustomerRegisterFragment())
     }
 
-    private fun loginButtonListener(dni: String, pass: String){
-        if (TextUtils.isEmpty(dni)) {
+    private fun loginButtonListener(){
+
+        val dni = etDNI.text.toString()
+        val pass = etPassword.text.toString()
+
+        if (dni.isNullOrBlank()) {
             Toast.makeText(
                 this.context, "Debe ingresar su DNI",
                 Toast.LENGTH_LONG
@@ -84,7 +88,7 @@ class LoginFragment : Fragment() {
                 this.context, "DNI no puede tener solo " + dni.length + " dígito(s)",
                 Toast.LENGTH_LONG
             ).show()
-        } else if (TextUtils.isEmpty(pass)) {
+        } else if (pass.isNullOrBlank()) {
             Toast.makeText(
                 this.context, "Debe ingresar su clave",
                 Toast.LENGTH_LONG

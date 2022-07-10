@@ -51,7 +51,7 @@ class MenuFragment : Fragment() {
     }
 
     private fun setBtnRrssListener(){
-        btnAssistance.setOnClickListener {
+        btnRrss.setOnClickListener {
             Toast.makeText(
                 this.context,
                 "PRÓXIMAMENTE REDES SOCIALES",
