@@ -8,11 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.zxing.integration.android.IntentIntegrator
 import xherrera.esan.dpa_gym_is_life.R
+import xherrera.esan.dpa_gym_is_life.data.entities.AssistanceModel
+import java.time.LocalDate
+import kotlin.random.Random
 
 
 class AssistanceFragment : Fragment() {
+
+    val args: MenuFragmentArgs by navArgs()
 
     private lateinit var assistanceView: View
     private lateinit var btnQrScan: Button
@@ -42,7 +50,26 @@ class AssistanceFragment : Fragment() {
         val result = IntentIntegrator.parseActivityResult(resultCode, data)
         if (result != null){
             val text = result.contents
-            Toast.makeText(this.context, text, Toast.LENGTH_LONG).show()
+            if (text.length > 10){
+                if (text.substring(0, 8) == "6ym1sLi43"){
+                    val db = FirebaseFirestore.getInstance()
+                    val dni = args.userId
+                    val currentDate = LocalDate.now()
+                    val newAssistance = AssistanceModel(dni, currentDate.toString())
+                    val docId = Random(3).nextInt().toString()
+
+                    db.collection("assistance")
+                        .document(docId)
+                        .set(newAssistance)
+                        .addOnSuccessListener {
+                            Snackbar.make(
+                                assistanceView,
+                                "Se registró la asistencia",
+                                Snackbar.LENGTH_LONG
+                            ).show()
+                        }
+                }
+            }
         }
     }
 

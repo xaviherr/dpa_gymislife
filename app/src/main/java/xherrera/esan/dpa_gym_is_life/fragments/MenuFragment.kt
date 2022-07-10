@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import xherrera.esan.dpa_gym_is_life.R
 
 class MenuFragment : Fragment() {
@@ -18,38 +19,42 @@ class MenuFragment : Fragment() {
     private lateinit var btnRrss: Button
     private lateinit var btnSubscription: Button
 
+    val args: MenuFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         menuView = inflater.inflate(R.layout.fragment_menu, container, false)
 
+        val dni = args.userId
+
         btnAssistance = menuView.findViewById(R.id.btn_menu_assistance)
         btnActivities = menuView.findViewById(R.id.btn_menu_activities)
         btnRrss = menuView.findViewById(R.id.btn_menu_rrss)
         btnSubscription = menuView.findViewById(R.id.btn_menu_subscription)
 
-        setBtnAssistanceListener()
-        setBtnActivitiesListener()
+        setBtnAssistanceListener(dni)
+        setBtnActivitiesListener(dni)
         setBtnRrssListener()
         setBtnSubscriptionListener()
 
         return menuView
     }
 
-    private fun setBtnAssistanceListener(){
+    private fun setBtnAssistanceListener(dni: Int){
         btnAssistance.setOnClickListener {
             findNavController()
                 .navigate(MenuFragmentDirections
-                    .actionMenuFragmentToAssistanceFragment())
+                    .actionMenuFragmentToAssistanceFragment(dni))
         }
     }
 
-    private fun setBtnActivitiesListener(){
+    private fun setBtnActivitiesListener(dni: Int){
         btnActivities.setOnClickListener {
             findNavController()
                 .navigate(MenuFragmentDirections
-                    .actionMenuFragmentToGroupActivitiesFragment())
+                    .actionMenuFragmentToGroupActivitiesFragment(dni))
         }
     }
 

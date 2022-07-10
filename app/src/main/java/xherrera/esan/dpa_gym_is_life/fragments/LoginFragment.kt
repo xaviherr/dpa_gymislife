@@ -96,7 +96,9 @@ class LoginFragment : Fragment() {
         } else {
             findNavController()
                 .navigate(LoginFragmentDirections
-                    .actionLoginFragmentToMenuFragment())
+                    .actionLoginFragmentToMenuFragment(
+                        dni.toInt()
+                    ))
         }
     }
 

@@ -37,12 +37,19 @@
         <action
             android:id="@+id/action_menuFragment_to_createActivityFragment"
             app:destination="@id/createActivityFragment" />
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/assistanceFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.AssistanceFragment"
         android:label="fragment_assistance"
-        tools:layout="@layout/fragment_assistance" />
+        tools:layout="@layout/fragment_assistance" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/customerRegisterFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.CustomerRegisterFragment"
@@ -56,7 +63,11 @@
         android:id="@+id/groupActivitiesFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.GroupActivitiesFragment"
         android:label="fragment_group_activities"
-        tools:layout="@layout/fragment_group_activities" />
+        tools:layout="@layout/fragment_group_activities" >
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/createActivityFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.CreateActivityFragment"
