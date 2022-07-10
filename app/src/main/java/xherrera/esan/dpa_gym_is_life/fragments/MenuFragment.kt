@@ -16,6 +16,7 @@ class MenuFragment : Fragment() {
     private lateinit var btnAssistance: Button
     private lateinit var btnActivities: Button
     private lateinit var btnRrss: Button
+    private lateinit var btnSubscription: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +27,12 @@ class MenuFragment : Fragment() {
         btnAssistance = menuView.findViewById(R.id.btn_menu_assistance)
         btnActivities = menuView.findViewById(R.id.btn_menu_activities)
         btnRrss = menuView.findViewById(R.id.btn_menu_rrss)
+        btnSubscription = menuView.findViewById(R.id.btn_menu_subscription)
 
         setBtnAssistanceListener()
         setBtnActivitiesListener()
         setBtnRrssListener()
+        setBtnSubscriptionListener()
 
         return menuView
     }
@@ -56,6 +59,14 @@ class MenuFragment : Fragment() {
                 this.context,
                 "PRÓXIMAMENTE REDES SOCIALES",
                 Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun setBtnSubscriptionListener(){
+        btnSubscription.setOnClickListener {
+            findNavController()
+                .navigate(MenuFragmentDirections
+                    .actionMenuFragmentToSubscriptionFragment())
         }
     }
 
