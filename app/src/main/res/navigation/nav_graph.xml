@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_customerRegisterFragment"
+            app:destination="@id/customerRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -44,7 +47,11 @@
         android:id="@+id/customerRegisterFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.CustomerRegisterFragment"
         android:label="fragment_customer_register"
-        tools:layout="@layout/fragment_customer_register" />
+        tools:layout="@layout/fragment_customer_register" >
+        <action
+            android:id="@+id/action_customerRegisterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/groupActivitiesFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.GroupActivitiesFragment"
@@ -59,5 +66,9 @@
         android:id="@+id/subscriptionFragment"
         android:name="xherrera.esan.dpa_gym_is_life.fragments.SubscriptionFragment"
         android:label="fragment_subscription"
-        tools:layout="@layout/fragment_subscription" />
+        tools:layout="@layout/fragment_subscription" >
+        <action
+            android:id="@+id/action_subscriptionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
